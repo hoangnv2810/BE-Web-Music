@@ -1,0 +1,699 @@
+{
+	"info": {
+		"_postman_id": "d99fa5c4-07c3-4279-8bcb-5940953c819e",
+		"name": "BTL-SOC",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14616805"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "Register",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"hoangck123@gmail.com\",\r\n    \"username\" : \"hoangck123\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Location",
+							"value": "http://localhost:8080/user/me"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/plain;charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "28"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 15 Apr 2023 04:04:26 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "User registered successfully"
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "Register Copy",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\" : \"hoangnv2810\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 15 Apr 2023 01:27:54 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"accessToken\": \"eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjgxNTIyMDc0LCJleHAiOjE2ODE2MDg0NzR9.8LbC7s-Xzc0ZshFycpGWc9f6N9SmFAJ10MT8im2fEjEUYp8bfxaQsDbXLA9MQeAyF_Ez3wp2K_ZDLYGtX0cOpg\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Order",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjgxNDgxNjA2LCJleHAiOjE2ODE1NjgwMDZ9.7cV-TyeaUbyFVtlrFA-Yp_iWd4qo3mh_1PEPDirGWMrKzYo6ZY1eGcGacWgSKZdKwzGjxtvvecf8p4v5Yy6L-w",
+						"description": "hoangnv2810",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI1IiwiaWF0IjoxNjgxNDgwODAwLCJleHAiOjE2ODE1NjcyMDB9.DPdAMYWoCgnmVh2MneG5CXEV76HX-N-P_famaDyiWcYWkT2Rac4i71tPm9zeZvZGny9UivOh_KHm-mPpISgqAA",
+						"description": "hoanglog368",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/order/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"order",
+						"3"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Order",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjgxNDgxNjA2LCJleHAiOjE2ODE1NjgwMDZ9.7cV-TyeaUbyFVtlrFA-Yp_iWd4qo3mh_1PEPDirGWMrKzYo6ZY1eGcGacWgSKZdKwzGjxtvvecf8p4v5Yy6L-w",
+								"description": "hoangnv2810",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI1IiwiaWF0IjoxNjgxNDgwODAwLCJleHAiOjE2ODE1NjcyMDB9.DPdAMYWoCgnmVh2MneG5CXEV76HX-N-P_famaDyiWcYWkT2Rac4i71tPm9zeZvZGny9UivOh_KHm-mPpISgqAA",
+								"description": "hoanglog368",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 15 Apr 2023 01:50:49 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": \"202304150828301\",\n        \"amount\": 50000000,\n        \"date\": \"15-04-2023 01:04\",\n        \"orderDesc\": \"Không bị làm phiền bởi quảng cáo\\r\\nNghe nhạc offline chất lượng Lossless\\r\\nUpload lên đến 1000 bài hát\\r\\nXem MV chất lượng Full HD\",\n        \"statusOrder\": \"success\",\n        \"plan\": {\n            \"id\": 2,\n            \"planName\": \"Gói 1 năm\",\n            \"price\": 499000,\n            \"desciption\": \"Không bị làm phiền bởi quảng cáo\\r\\nNghe nhạc offline chất lượng Lossless\\r\\nUpload lên đến 1000 bài hát\\r\\nXem MV chất lượng Full HD\"\n        },\n        \"user\": 1\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Payment",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjgxMTIyMTMyLCJleHAiOjE2ODEyMDg1MzJ9.uzm98ZdurW2Wfo2_tOQ59IhasAhwNEsxhumfOtMibAdgwsHauW0CxzIupBbjOb_BhdyU9DADAqHTfVyD5bZDVg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 3,\r\n    \"amount\": 5560000.0,\r\n    \"date\": \"2023-04-10T10:33:28.000+00:00\",\r\n    \"orderDesc\": \"Nap tien cho thue bao 0123456789\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/payment",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"payment"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Payment",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjgxNDgxNjA2LCJleHAiOjE2ODE1NjgwMDZ9.7cV-TyeaUbyFVtlrFA-Yp_iWd4qo3mh_1PEPDirGWMrKzYo6ZY1eGcGacWgSKZdKwzGjxtvvecf8p4v5Yy6L-w",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"bankCode\": \"NCB\",\r\n    \"locate\": \"vn\",\r\n    \"orderDesc\": \"Thanh toan goi 6 thang\",\r\n    \"plan\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/payment",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"payment"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 15 Apr 2023 01:54:17 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, no-cache"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "-1"
+						},
+						{
+							"key": "X-AspNet-Version",
+							"value": "4.0.30319"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-Host",
+							"value": "sandbox.vnpayment.vn"
+						},
+						{
+							"key": "X-Host",
+							"value": "sandbox.vnpayment.vn"
+						},
+						{
+							"key": "X-Upstream",
+							"value": "sandbox.vnpayment.vn"
+						},
+						{
+							"key": "X-Upstream",
+							"value": "sandbox.vnpayment.vn"
+						},
+						{
+							"key": "Server",
+							"value": "VNPAY Server"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=31536000"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						}
+					],
+					"cookie": [],
+					"body": "<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <meta charset=\"UTF-8\">\n        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, viewport-fit=cover\">\n        <meta name=\"format-detection\" content=\"telephone=no\">\n        <title>\r\n        Thanh to&#225;n qua Ng&#226;n h&#224;ng NCB\r\n    </title>\n        <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\">\n        <link href=\"https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap\" rel=\"stylesheet\">\n        <!-- bootstrap -->\n        <link rel=\"stylesheet\" href=\"/paymentv2/Styles/vendors/bootstrap/bootstrap.bundles.css\">\n        <!-- end bootstrap -->\n        <!-- select2 -->\n        <link rel=\"stylesheet\" href=\"/paymentv2/Styles/vendors/select2/select2.bundles.css\">\n        <!-- end select2 -->\n        <link href=\"/paymentv2/Styles/vendors/datetimepicker/bootstrap-datetimepicker.min.css\" rel=\"stylesheet\" />\n        <!-- css use for this page only -->\n        <!-- end css use for this page only -->\n        <!-- css use for this page only -->\n        <!-- end css use for this page only -->\n        <link rel=\"stylesheet\" href=\"/paymentv2/Styles/style.css\">\n        <link rel=\"stylesheet\" href=\"/paymentv2/Styles/custom.bundles.css\">\n        <link rel=\"shortcut icon\" type=\"text/html\" href=\"/paymentv2/images/favicon/favicon.png\">\r\n\n    </head>\n    <body onunload=\"\" >\n        <div class=\"loading\">\n            <div class=\"lds-ring\">\n                <div></div>\n                <div></div>\n                <div></div>\n                <div></div>\n            </div>\n        </div>\n        <div class=\"main main-layout-lg layout-bills\">\n            <!-- _custom.header -->\n            <div class=\"header-desktop show-desktop\">\n                <div class=\"row row-16 align-items-center justify-content-between\">\n                    <div class=\"col-auto\">\n                        <!-- button.button -->\n                        <!-- end button.button -->\r\n                \n                    </div>\n                    <div class=\"col-auto block-right\">\n                        <div class=\"title h4\">\n                            <!-- button.button -->\n                            <a class=\"ubg-ghost ubox-size-button-sm ubg-hover ubg-active ubtn\" href=\"/paymentv2/Ncb/Transaction/Index.html?token=b1f340ca2e8f4a5ba32cd3c137d2db92&amp;vnp_Locale=en-US\">\n                                <div class=\"ubtn-inner\">\n                                    <span class=\"ubtn-ic ubtn-ic-left\">\n                                        <img src=\"/paymentv2/images/img/flags/en.svg\" alt=\"\" class=\"ic-xl\">\r\n                                \n                                    </span>\n                                    <span class=\"ubtn-text\">En</span>\n                                </div>\n                            </a>\n                            <!-- end button.button -->\r\n                    \n                        </div>\n                    </div>\n                </div>\n            </div>\n            <!-- end _custom.header -->\n            <div class=\"main-wrap\">\n                <div class=\"main-inner main-inner-page\">\n                    <div class=\"box box-main\">\n                        <!-- _custom.header -->\n                        <div class=\"box__header header-box header-box-simple\">\n                            <div class=\"box__header-inner\">\n                                <div class=\"section\">\n                                    <div class=\"row justify-content-center align-items-center\">\n                                        <div class=\"col-md-auto header-box-top\">\n                                            <div class=\"row align-items-center justify-content-md-center\">\n                                                <div class=\"col-auto show-mobile\">\n                                                    <!-- button.button -->\n                                                    <!-- end button.button -->\r\n                        \n                                                </div>\n                                                <div class=\"col-md-auto col\">\n                                                    <div class=\"logo d-block text-center\">\n                                                        <img src=\"/paymentv2/Images/brands/logo.svg\" alt=\"VNPAY\">\r\n                                \n                                                    </div>\n                                                </div>\n                                            </div>\n                                        </div>\n                                        <div class=\"col-md timer\">\n                                            <div class=\"timmer-inner\">\n                                                <div class=\"row row-12 align-items-center justify-content-md-end justify-content-between list-mb12 list-crop\">\n                                                    <div class=\"col-md-auto col color-sub-default\">\r\n                                Giao dịch hết hạn sau\r\n                            </div>\n                                                    <div class=\"col-auto color-sub-default\">\n                                                        <div class=\"timer-clock fz-h3 weight5\">\n                                                            <div class=\"row row-4 align-items-center\">\n                                                                <div class=\"col-auto\">\n                                                                    <div class=\"ubg-default ubox-size-ic-xs ubox-square ubox ubox-ic\" id=\"minute\">\r\n                                                --\r\n                                            </div>\n                                                                </div>\n                                                                <div class=\"col-auto\">:</div>\n                                                                <div class=\"col-auto\">\n                                                                    <div class=\"ubg-default ubox-size-ic-xs ubox-square ubox ubox-ic\" id=\"second\">\r\n                                                --\r\n                                            </div>\n                                                                </div>\n                                                            </div>\n                                                        </div>\n                                                    </div>\n                                                </div>\n                                            </div>\n                                        </div>\n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n                        <!-- end _custom.header -->\n                        <div class=\"box__body ubg-white\">\n                            <div class=\"list-mb24\">\n                                <div class=\"layout-bills-inner box-section\">\n                                    <div class=\"row list-mb24 list-crop\">\n                                        <div class=\"col-12 main-title-mobile show-mobile h3 text-center\">\r\n                                Thanh to&#225;n qua Ng&#226;n h&#224;ng NCB\r\n                            </div>\n                                        <div class=\"col-md-5 bills-col\">\n                                            <div class=\"bills\">\n                                                <div class=\"bills-header h2 show-desktop\">\r\n                    Th&#244;ng tin đơn h&#224;ng\r\n                </div>\n                                                <div class=\"bills-header-mobile show-mobile list-mb12 list-last-mb\" data-bs-toggle=\"collapse\" data-bs-target=\"#accordionBill\" aria-expanded=\"true\" aria-controls=\"accordionBill\">\n                                                    <div class=\"title weight5\">\r\n                        Thanh to&#225;n đơn h&#224;ng 202304150854161\r\n                    </div>\n                                                    <div class=\"row color-primary align-items-center\">\n                                                        <div class=\"col h2\">\n                                                            <span id=\"totalAmountMb\">499.000</span>\n                                                            <sup>VND</sup>\n                                                        </div>\n                                                        <div class=\"col-auto\">\n                                                            <!-- button.button -->\n                                                            <div class=\"ubg-transparent ubox-size-button-xs ubg-hover ubg-active ubtn\">\n                                                                <div class=\"ubtn-inner\">\n                                                                    <span class=\"ubtn-text color-primary\">\r\n                                        Xem chi tiết\r\n                                    </span>\n                                                                    <span class=\"ubtn-ic ubtn-ic-right\">\n                                                                        <img src=\"/paymentv2/Images/icons-color/primary/default/24x24-chevrondown.svg\" alt=\"\" class=\"ic-default\">\r\n                                    \n                                                                    </span>\n                                                                </div>\n                                                            </div>\n                                                            <!-- end button.button -->\r\n                        \n                                                        </div>\n                                                    </div>\n                                                </div>\n                                                <div class=\"bills-body accordion-collapse collapse\" id=\"accordionBill\">\n                                                    <div>\n                                                        <div class=\"bills-list list-mb24 list-last-mb\">\n                                                            <div class=\"bills-list-item show-desktop\">\n                                                                <div class=\"row\">\n                                                                    <div class=\"col-md-12 col-5 mb4\">\n                                                                        <div class=\"sub-title color-sub-default\">\r\n                                            Số tiền thanh to&#225;n\r\n                                        </div>\n                                                                    </div>\n                                                                    <div class=\"col-md-12 col\">\n                                                                        <div class=\"title text-left-md-right color-primary h2\">\n                                                                            <span id=\"totalAmountDt\">499.000</span>\n                                                                            <sup>VND</sup>\n                                                                        </div>\n                                                                    </div>\n                                                                </div>\n                                                            </div>\n                                                            <div class=\"bills-list-item\">\n                                                                <div class=\"row\">\n                                                                    <div class=\"col-md-12 col-5 mb4\">\n                                                                        <div class=\"sub-title color-sub-default\">\r\n                                            Gi&#225; trị đơn h&#224;ng\r\n                                        </div>\n                                                                    </div>\n                                                                    <div class=\"col-md-12 col\">\n                                                                        <div class=\"title text-left-md-right h3\">\r\n                                            499.000\n                                                                            <sup>VND</sup>\n                                                                        </div>\n                                                                    </div>\n                                                                </div>\n                                                            </div>\n                                                            <div class=\"bills-list-item\">\n                                                                <div class=\"row\">\n                                                                    <div class=\"col-md-12 col-5 mb4\">\n                                                                        <div class=\"sub-title color-sub-default\">\r\n                                            Ph&#237; giao dịch\r\n                                        </div>\n                                                                    </div>\n                                                                    <div class=\"col-md-12 col\">\n                                                                        <div class=\"title text-left-md-right h3\">\r\n                                            0\n                                                                            <sup>VND</sup>\n                                                                        </div>\n                                                                    </div>\n                                                                </div>\n                                                            </div>\n                                                            <div class=\"bills-list-item\" id=\"discountAmountItem\" style=\"display: none\">\n                                                                <div class=\"row\">\n                                                                    <div class=\"col-md-12 col-5 mb4\">\n                                                                        <div class=\"sub-title color-sub-default\">\r\n                                            Số tiền khuyến mại\r\n                                        </div>\n                                                                    </div>\n                                                                    <div class=\"col-md-12 col\">\n                                                                        <div class=\"title text-left-md-right h3\">\n                                                                            <span id=\"discountAmount\">0</span>\n                                                                            <sup>VND</sup>\n                                                                        </div>\n                                                                    </div>\n                                                                </div>\n                                                            </div>\n                                                            <div class=\"bills-list-item show-desktop\">\n                                                                <div class=\"row\">\n                                                                    <div class=\"col-md-12 col-5 mb4\">\n                                                                        <div class=\"sub-title color-sub-default\">\r\n                                            M&#227; đơn h&#224;ng\r\n                                        </div>\n                                                                    </div>\n                                                                    <div class=\"col-md-12 col\">\n                                                                        <div class=\"title text-left-md-right h3\">\r\n                                            202304150854161\r\n                                        </div>\n                                                                    </div>\n                                                                </div>\n                                                            </div>\n                                                            <div class=\"bills-list-item\">\n                                                                <div class=\"row\">\n                                                                    <div class=\"col-md-12 col-5 mb4\">\n                                                                        <div class=\"sub-title color-sub-default\">\r\n                                            Nh&#224; cung cấp\r\n                                        </div>\n                                                                    </div>\n                                                                    <div class=\"col-md-12 col\">\n                                                                        <div class=\"title text-left-md-right h3\">\r\n                                            VNPAY - TryItNow\r\n                                        </div>\n                                                                    </div>\n                                                                </div>\n                                                            </div>\n                                                        </div>\n                                                    </div>\n                                                </div>\n                                            </div>\n                                        </div>\n                                        <div class=\"col-md right-bill-col\">\n                                            <div class=\"right-bill-col-inner\">\n                                                <div class=\"main-title h2 text-center show-desktop mb24\">\r\n                                        Thanh to&#225;n qua Ng&#226;n h&#224;ng NCB\r\n                                    </div>\n                                                <div class=\"bank-payement-section\">\n                                                    <form action=\"/paymentv2/Ncb/Transaction/Index.html\" autocomplete=\"off\" class=\"form form-vertical\" id=\"cardVerify\" method=\"post\">\n                                                        <div class=\"list-mb24 list-last-mb\">\n                                                            <div class=\"bank-payement-section-inner list-mb24 list-last-mb\">\n                                                                <!-- tab.tab -->\n                                                                <div class=\"nav-wrap\">\n                                                                    <nav class=\"nav nav-style-default nav-justified\">\n                                                                        <a class=\"nav-link active\" data-bs-toggle=\"tab\" data-bs-target=\".tab2\">Thẻ nội địa</a>\n                                                                    </nav>\n                                                                </div>\n                                                                <!-- end tab.tab -->\r\n                                                \n                                                            </div>\n                                                            <div class=\"tab-content\">\n                                                                <div class=\"tab-pane fade show tab1 active\">\n                                                                    <div class=\"row list-mb16 list-crop\">\n                                                                        <div class=\"col-12\">\n                                                                            <!-- form.input -->\n                                                                            <div class=\"form-group\">\n                                                                                <div class=\"input-group-wrap input-default input-size-default input-group-vertical\">\n                                                                                    <label class=\"input-inner-wrap\">\n                                                                                        <input type=\"text\" name=\"cardNumber\" id=\"cardNumber\"\r\n                                                                                   placeholder=\"Nhập số thẻ\r\n\" maxlength=\"19\"\r\n                                                                                   data-parsley-required-message=\"Qu&#253; kh&#225;ch vui l&#242;ng nhập Số thẻ\"\r\n                                                                                   data-parsley-length-message=\"Số thẻ kh&#244;ng hợp lệ\" />\n                                                                                        <label class=\"input-label\">\n                                                                                            <div class=\"inner\">\r\n                                                                                    Số thẻ\r\n                                                                                </div>\n                                                                                        </label>\n                                                                                        <div class=\"input-extend input-extend-right\">\n                                                                                            <div class=\"input-box input-ic-clear\"></div>\n                                                                                            <div class=\"input-box input-extend-inner\">\n                                                                                                <div class=\"logo-brands-small\">\n                                                                                                    <img src=\"/paymentv2/images/img/logos/bank/big/ncb.svg\">\r\n                                                                                    \n                                                                                                </div>\n                                                                                            </div>\n                                                                                        </div>\n                                                                                        <div class=\"input-frame\"></div>\n                                                                                    </label>\n                                                                                </div>\n                                                                                <div class=\"errorBlock\"></div>\n                                                                            </div>\n                                                                            <!-- end form.input -->\r\n                                                            \n                                                                        </div>\n                                                                        <div class=\"col-12\">\n                                                                            <!-- form.input -->\n                                                                            <div class=\"form-group\">\n                                                                                <div class=\"input-group-wrap input-default input-size-default input-group-vertical\">\n                                                                                    <label class=\"input-inner-wrap\">\n                                                                                        <input type=\"text\" class=\"input input-label-change input-has-clear\" id=\"cardHolder\" name=\"cardHolder\"\r\n                                                                                   placeholder=\"Nhập t&#234;n chủ thẻ (kh&#244;ng dấu)\" required=\"required\" maxlength=\"35\"\r\n                                                                                   pattern=\"^\\s*[a-zA-Z,\\s]+\\s*$\" autocorrect=\"off\"\r\n                                                                                   data-parsley-required-message=\"Qu&#253; kh&#225;ch vui l&#242;ng nhập T&#234;n chủ thẻ\"\r\n                                                                                   data-parsley-pattern-message=\"T&#234;n chủ thẻ kh&#244;ng hợp lệ\" />\n                                                                                        <label class=\"input-label\">\n                                                                                            <div class=\"inner\">\r\n                                                                                    T&#234;n chủ thẻ\r\n                                                                                </div>\n                                                                                        </label>\n                                                                                        <div class=\"input-extend input-extend-right\">\n                                                                                            <div class=\"input-box input-ic-clear\"></div>\n                                                                                        </div>\n                                                                                        <div class=\"input-frame\"></div>\n                                                                                    </label>\n                                                                                </div>\n                                                                                <div class=\"errorBlock\"></div>\n                                                                            </div>\n                                                                            <!-- end form.input -->\r\n                                                            \n                                                                        </div>\n                                                                        <div class=\"col-6\">\n                                                                            <!-- form.input -->\n                                                                            <div class=\"form-group\">\n                                                                                <div class=\"input-group-wrap input-default input-size-default input-group-vertical\">\n                                                                                    <label class=\"input-inner-wrap\">\n                                                                                        <input name=\"cardDate\" id=\"cardDate\" class=\"input input-label-change input-has-clear cleave-mm-yy\" required=\"required\"\r\n                                                                                   pattern=\"^(01|02|03|04|05|06|07|08|09|10|11|12)\\/[0-9]{2,2}$\" maxlength=\"5\" placeholder=\"MM/YY\" autocorrect=\"off\"\r\n                                                                                   data-parsley-required-message=\"Qu&#253; kh&#225;ch vui l&#242;ng nhập Ng&#224;y ph&#225;t h&#224;nh\"\r\n                                                                                   data-parsley-pattern-message=\"Th&#225;ng/năm kh&#244;ng hợp lệ, vui l&#242;ng kiểm tra lại!\"\r\n                                                                                   inputmode=\"numeric\">\n                                                                                        <label class=\"input-label\">\n                                                                                            <div class=\"inner\">\r\n                                                                                    Ng&#224;y ph&#225;t h&#224;nh\r\n                                                                                    \n                                                                                                <div class=\"inline-block v-text-bottom\">\n                                                                                                    <div data-bs-tooltip=\"tooltip\" title=\"\n                                                                                                        <img src='/Images/img/card-demo/date-release.svg' alt='' width='149' height='96'>\n                                                                                                        <div class='p3 mt8'>Ng&#224;y ph&#225;t h&#224;nh được in tr&#234;n mặt trước của thẻ. V&#237; dụ: 12/20</div>\" class=\"ubg-transparent ubox-size-ic-xxs ubox-square ubox-rounded ubox ubox-ic\">\n                                                                                                        <img src=\"/paymentv2/Images/icons-color/default/default/24x24-information-circle.svg\" alt=\"\" class='ic-default'>\r\n                                                                                        \n                                                                                                    </div>\n                                                                                                </div>\n                                                                                            </div>\n                                                                                        </label>\n                                                                                        <div class=\"input-extend input-extend-right\">\n                                                                                            <div class=\"input-box input-ic-clear\"></div>\n                                                                                        </div>\n                                                                                        <div class=\"input-frame\"></div>\n                                                                                    </label>\n                                                                                </div>\n                                                                                <div class=\"errorBlock\"></div>\n                                                                            </div>\n                                                                            <!-- end form.input -->\r\n                                                            \n                                                                        </div>\n                                                                        <div class=\"col-12\">\n                                                                            <div class=\"promo-section\">\n                                                                                <div class=\"promo-inner\">\n                                                                                    <div class=\"list-mb12 list-crop\">\n                                                                                        <div class=\"row align-items-center\">\n                                                                                            <div class=\"col\">\n                                                                                                <div class=\"h3\">\r\n                                M&#227; khuyến mại\r\n                            </div>\n                                                                                            </div>\n                                                                                            <div class=\"col-auto\">\n                                                                                                <div class=\"promo-variable hidden\">\n                                                                                                    <span id=\"queryPromotionUrl\">/paymentv2/Transaction/QueryPromotion.html</span>\n                                                                                                    <span id=\"checkPromotionUrl\">/paymentv2/Transaction/CheckPromotion.html</span>\n                                                                                                </div>\n                                                                                                <div class=\"promo-unselected\">\n                                                                                                    <div class=\"p1\">\n                                                                                                        <a href=\"#\" id=\"btnShowPromoModal\" class=\"ubg-secondary ubox-size-button-sm ubg-hover ubg-active ubtn\">\n                                                                                                            <div class=\"ubtn-inner\">\n                                                                                                                <span class=\"ubtn-ic ubtn-ic-left\">\n                                                                                                                    <img src=\"/paymentv2/Images/icons-color/default2/default/24x24-promocode.svg\" alt=\"\" class=\"ic-default\">\r\n                                            \n                                                                                                                </span>\n                                                                                                                <span class=\"ubtn-text color-sub-default\">Chọn hoặc nhập m&#227;</span>\n                                                                                                            </div>\n                                                                                                        </a>\n                                                                                                    </div>\n                                                                                                </div>\n                                                                                                <div class=\"promo-selected\" style=\"display: none\">\n                                                                                                    <div class=\"ubg-success ubox-size-button-sm ubg-hover ubg-active ubtn ubtn-title-border position-relative\">\n                                                                                                        <a href=\"#\" id=\"btnPromoCodeSelected\" class=\"ubox-size-default ubox-abs\"></a>\n                                                                                                        <div class=\"ubtn-inner\">\n                                                                                                            <input type=\"hidden\" id=\"promoCode\" name=\"promoCode\" />\n                                                                                                            <span id=\"promoCodeSelected\" class=\"ubtn-text\"></span>\n                                                                                                            <div class=\"order-2 position-relative\">\n                                                                                                                <button id=\"removePromo\" class=\"ubg-transparent ubox-size-button-xxs ubox-square ubg-hover ubg-active ubtn\">\n                                                                                                                    <div class=\"ubtn-inner\">\n                                                                                                                        <span class=\"ubtn-ic ubtn-ic-left\">\n                                                                                                                            <img src=\"/paymentv2/Images/icons-color/invert/default/24x24-close-circle.svg\" alt=\"\" class=\"ic-sm\">\r\n                                                    \n                                                                                                                        </span>\n                                                                                                                    </div>\n                                                                                                                </button>\n                                                                                                            </div>\n                                                                                                        </div>\n                                                                                                    </div>\n                                                                                                </div>\n                                                                                            </div>\n                                                                                        </div>\n                                                                                        <div class=\"row promo-selected\" style=\"display: none\">\n                                                                                            <div class=\"col\">\n                                                                                                <div class=\"p1 color-sub-default\">\r\n                                Số tiền khuyến mại\r\n                            </div>\n                                                                                            </div>\n                                                                                            <div class=\"col-auto\">\n                                                                                                <div class=\"h3\">\n                                                                                                    <span id=\"promoDiscountAmount\"></span>\n                                                                                                    <sup>VND</sup>\n                                                                                                </div>\n                                                                                            </div>\n                                                                                        </div>\n                                                                                    </div>\n                                                                                </div>\n                                                                            </div>\n                                                                        </div>\n                                                                        <input type=\"hidden\" value=\"b1f340ca2e8f4a5ba32cd3c137d2db92\" name=\"ordertoken\" id=\"ordertoken\" />\n                                                                    </div>\n                                                                </div>\n                                                            </div>\n                                                            <div class=\"hide-on-qr-show list-mb24 list-last-mb \">\n                                                                <a href=\"#\" data-bs-toggle=\"modal\" data-bs-target=\"#modalDKDKBIDV\" class=\"link weight5 link-style-default\">\n                                                                    <img src=\"/paymentv2/images/icons-color/info/default/24x24-document.svg\" alt=\"\" class='ic-default'>\r\n                                                        Điều kiện sử dụng dịch vụ\r\n                                                    \n                                                                </a>\n                                                                <div class=\"col-12 display_error\" style=\"margin-top: 5% ; display: none\">\n                                                                    <div class=\"alert-box alert-box-danger ubg-sub-danger list-crop\">\n                                                                        <div class=\"alert-box-title\">\n                                                                            <div class=\"row row-8\">\n                                                                                <div class=\"col-auto ic\">\n                                                                                    <img src=\"/paymentv2/Images/icons-color/danger/default/24x24-alert.svg\" alt=\"\" class=\"ic-default\" />\n                                                                                </div>\n                                                                                <label class=\"col title weight5\" id=\"lb_message_error\">\r\n                                                                        \r\n                                                                    </label>\n                                                                            </div>\n                                                                        </div>\n                                                                    </div>\n                                                                </div>\n                                                                <!-- button.btnGroup -->\n                                                                <div class=\"ubtn-group list-mb16 list-crop row row-16 justify-content-center group-col-2\">\n                                                                    <div class=\"group-col-item\">\n                                                                        <!-- button.button -->\n                                                                        <a data-bs-toggle=\"modal\" data-bs-target=\"#modalCancelPayment\" class=\"ubg-secondary ubox-size-button-default ubg-hover ubg-active ubtn\">\n                                                                            <div class=\"ubtn-inner\">\n                                                                                <span class=\"ubtn-text\">Hủy thanh to&#225;n</span>\n                                                                            </div>\n                                                                        </a>\n                                                                        <!-- end button.button -->\r\n                                                        \n                                                                    </div>\n                                                                    <div class=\"group-col-item\">\n                                                                        <!-- button.button -->\n                                                                        <button class=\"ubg-primary ubox-size-button-default ubg-hover ubg-active ubtn\" id=\"btnContinue\">\n                                                                            <div class=\"ubtn-inner\">\n                                                                                <span class=\"ubtn-text\">Tiếp tục</span>\n                                                                            </div>\n                                                                        </button>\n                                                                        <!-- end button.button -->\r\n                                                        \n                                                                    </div>\n                                                                </div>\n                                                                <!-- end button.btnGroup -->\r\n                                                \n                                                            </div>\n                                                        </div>\n                                                    </form>\n                                                </div>\n                                            </div>\n                                        </div>\n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n                        <!-- _custom.footerBox -->\n                        <div class=\"box__footer footer-box\">\n                            <div class=\"box__footer-inner\">\n                                <div class=\"section\">\n                                    <div class=\"row row-32 list-mb24 list-crop align-items-center justify-content-center\">\n                                        <div class=\"col fz-h5 show-mobile\">\r\n                    Phát triển bởi VNPAY &copy; 2023\r\n                </div>\n                                        <div class=\"col-sm show-desktop\">\n                                            <div class=\"row row-32 align-items-center\">\n                                                <div class=\"col-auto\">\n                                                    <!-- button.button -->\n                                                    <a href=\"tel:1900555577\" class=\"ubg-ghost ubox-size-button-default ubg-hover ubg-active ubtn\">\n                                                        <div class=\"ubtn-inner\">\n                                                            <div class=\"ubg-line-porcelain-dark ubox-size-ic-md ubox-square ubox ubox-ic\">\n                                                                <img src=\"/paymentv2/images/icons-color/default2/default/24x24-phone.svg\" alt=\"\" class='ic-default'>\r\n                                    \n                                                            </div>\n                                                            <span class=\"ubtn-text h3 color-info u pl12\">1900.5555.77</span>\n                                                        </div>\n                                                    </a>\n                                                    <!-- end button.button -->\r\n                        \n                                                </div>\n                                                <div class=\"col-auto\">\n                                                    <!-- button.button -->\n                                                    <a href=\"mailto:hotro@vnpay.vn\" class=\"ubg-ghost ubox-size-button-default ubg-hover ubg-active ubtn\">\n                                                        <div class=\"ubtn-inner\">\n                                                            <div class=\"ubg-line-porcelain-dark ubox-size-ic-md ubox-square ubox ubox-ic\">\n                                                                <img src=\"/paymentv2/images/icons-color/default2/default/24x24-email.svg\" alt=\"\" class='ic-default'>\r\n                                    \n                                                            </div>\n                                                            <span class=\"ubtn-text h3 color-info u pl12\">hotro@vnpay.vn</span>\n                                                        </div>\n                                                    </a>\n                                                    <!-- end button.button -->\r\n                        \n                                                </div>\n                                            </div>\n                                        </div>\n                                        <div class=\"col-auto\">\n                                            <div class=\"row row-8 justify-content-center\">\n                                                <div class=\"col-auto\">\n                                                    <a href=\"https://profile.globalsign.com/SiteSeal/siteSeal/profile/profile.do?p1=e797f6ab&p2=a06dada7520ada559537452c666a510c95706240fc2dfde64d4c864bf735462b7a370908847a6060a26daeac4f549d0bc8&p3=7b58e9c169b0b0ff3eb932a37330cc91d466b871\" target=\"_blank\" class=\"footer-logos\">\n                                                        <img src=\"/paymentv2/images/img/logos/global-sign.svg\" height=\"40\">\r\n                            \n                                                    </a>\n                                                </div>\n                                                <div class=\"col-auto\">\n                                                    <a href=\"https://seal.controlcase.com/index.php?page=showCert&cId=4096647551\" target=\"_blank\" class=\"footer-logos\">\n                                                        <img src=\"/paymentv2/images/img/logos/pcidss.svg\" height=\"40\">\r\n                            \n                                                    </a>\n                                                </div>\n                                            </div>\n                                        </div>\n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n                        <!-- end _custom.footerBox -->\r\n        \n                    </div>\n                </div>\n            </div>\n            <!-- modal.modal -->\n            <div class=\"modal fade\" id=\"modalDKDKBIDV\" role=\"dialog\" aria-labelledby=\"exampleModalLabel\" aria-hidden=\"true\">\n                <div class=\"modal-dialog modal-dialog-centered modal-size-sm modal-dialog-scrollable\" role=\"document\">\n                    <div class=\"modal-content\">\n                        <div class=\"modal-header\">\n                            <div class=\"modal-wrap\">\n                                <div class=\"row row-16 modal-title-wrap\">\n                                    <div class=\"col-12 text-center\">\n                                        <h2 class=\"modal-title h2\">\r\n                                Điều kiện sử dụng dịch vụ\r\n                            </h2>\n                                    </div>\n                                </div>\n                                <!-- button.button -->\n                                <a data-bs-dismiss=\"modal\" class=\"ubg-transparent ubox-size-button-default ubox-square ubg-hover ubg-active ubtn modal-close-btn\">\n                                    <div class=\"ubtn-inner\">\r\n                        </div>\n                                </a>\n                                <!-- end button.button -->\r\n                \n                            </div>\n                        </div>\n                        <div class=\"modal-body\">\n                            <strong>Điều kiện sử dụng dịch vụ:</strong>\n                            <br/>- Khách hàng có thẻ ghi nợ nội địa và đăng ký dịch vụ ECOM của Ngân hàng Quốc dân.\n                            <br/>- Tài khoản thẻ đang hoạt động và có đủ số dư\n                            <br/>\n                            <strong>Đăng ký sử dụng:</strong>\n                            <br/>- Tại các quầy giao dịch của NCB trên toàn quốc\n                            <br/>\n                            <strong>Hotline hỗ trợ:</strong> 08.38 216 216\n                        </div>\n                    </div>\n                </div>\n            </div>\n            <!-- end modal.modal -->\n            <div class=\"modal fade modal-body-ubg-secondary\" id=\"modalPromo\" role=\"dialog\" aria-labelledby=\"exampleModalLabel\" aria-hidden=\"true\">\n                <div class=\"modal-dialog modal-dialog-centered modal-size-sm modal-mobile modal-dialog-scrollable\" role=\"document\">\n                    <div class=\"modal-content\">\n                        <div class=\"modal-header\">\n                            <div class=\"modal-wrap\">\n                                <div class=\"row row-16 modal-title-wrap\">\n                                    <div class=\"col-12 text-center\">\n                                        <h2 class=\"modal-title h2\">\r\n                                    Khuyến mại\r\n                                </h2>\n                                    </div>\n                                </div>\n                                <a data-bs-dismiss=\"modal\" class=\"ubg-transparent ubox-size-button-default ubox-square ubg-hover ubg-active ubtn modal-close-btn\">\n                                    <div class=\"ubtn-inner\"></div>\n                                </a>\n                                <form id=\"promoCodeManual\" class=\"mt20\">\n                                    <div class=\"form-group\">\n                                        <div class=\"input-group-wrap input-default input-size-sm input-group-vertical\">\n                                            <label class=\"input-inner-wrap\">\n                                                <input type=\"text\" id=\"inputPromoManual\" class=\"input input-label-change input-has-clear\" name=\"promoCode\"\r\n                                               placeholder=\"Bạn c&#243; m&#227; khuyến mại kh&#225;c?\" required=\"required\" maxlength=\"20\" autocorrect=\"off\"\r\n                                               data-parsley-required-message=\"Qu&#253; kh&#225;ch vui l&#242;ng nhập m&#227; khuyến mại\"\r\n                                               data-parsley-length-message=\"M&#227; khuyến mại kh&#244;ng hợp lệ\" />\n                                                <div class=\"input-extend input-extend-right\">\n                                                    <div class=\"input-box input-ic-clear\"></div>\n                                                    <div class=\"input-box input-extend-inner pr4\">\n                                                        <button id=\"btnPromoManual\" class=\"ubg-primary ubox-size-button-sm ubg-hover ubg-active ubtn ubtn-primary-disabled\">\n                                                            <div class=\"ubtn-inner\">\n                                                                <span class=\"ubtn-text\">&#193;p dụng</span>\n                                                            </div>\n                                                        </button>\n                                                    </div>\n                                                </div>\n                                                <div class=\"input-frame\"></div>\n                                            </label>\n                                        </div>\n                                        <div class=\"errorBlock\"></div>\n                                    </div>\n                                </form>\n                                <div class=\"promo-variable hidden\">\n                                    <span class=\"txt-expiry-date\">HSD</span>\n                                    <span class=\"txt-btn-apply\">&#193;p dụng</span>\n                                    <span class=\"txt-btn-cancel-promo\">Hủy bỏ</span>\n                                    <span class=\"txt-btn-details\">Chi tiết</span>\n                                    <span class=\"txt-input-promotion-code\">Nhập m&#227; ${promoCode} khi thanh to&#225;n, giảm ngay:</span>\n                                    <span class=\"txt-tooltip-copy\">Sao ch&#233;p</span>\n                                    <span class=\"icon-copy\">/paymentv2/Images/icons-color/default2/default/24x24-copy.svg</span>\n                                </div>\n                            </div>\n                        </div>\n                        <div class=\"modal-body\">\n                            <div class=\"list-promo\" style=\"display: none\">\n                                <div id=\"listPromotions\" class=\"list-mb24 list-last-mb\"></div>\n                            </div>\n                            <div class=\"empty-box\" style=\"display: none\">\n                                <div class=\"empty-box-icon\">\n                                    <img src=\"/paymentv2/Images/icons-color/defaultlight/default/24x24-promocode.svg\" alt=\"\">\r\n                        \n                                </div>\n                                <div class=\"empty-box-content mt16 color-sub-default h3\">Hiện không có chương trình khuyến mại nào được áp dụng cho\n                                    <br/>nhà cung cấp này\n                                </div>\n                            </div>\n                        </div>\n                        <div class=\"modal-footer justify-content-center error-block\" style=\"display: none\">\n                            <div class=\"modal-footer-content-after mt16\">\n                                <div class=\"alert-box alert-box-danger ubg-sub-danger list-crop\">\n                                    <div class=\"alert-box-title\">\n                                        <div class=\"row row-8\">\n                                            <div class=\"col-auto ic\">\n                                                <img src=\"/paymentv2/Images/icons-color/danger/default/24x24-alert.svg\" alt=\"\" class=\"ic-default\">\n                                            </div>\n                                            <div class=\"col title weight5 error-message\"></div>\n                                        </div>\n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n            </div>\n            <div class=\"toast-container\">\n                <div class=\"toast toast-success ubg-success\" id=\"toastPromoCopySuccess\" role=\"alert\" aria-live=\"assertive\" aria-atomic=\"true\">\n                    <div class=\"toast-body\">\n                        <div class=\"row row-8\">\n                            <div class=\"col-auto col-icon\">\n                                <img src=\"/paymentv2/Images/icons-color/invert/default/24x24-check-circle.svg\" alt=\"\" class=\"ic-sm\">\r\n                    \n                            </div>\n                            <div class=\"col flex-grow-1\">Sao ch&#233;p th&#224;nh c&#244;ng</div>\n                        </div>\n                    </div>\n                    <button data-bs-dismiss=\"toast\" aria-label=\"Close\" class=\"ubg-transparent ubox-size-button-xs ubox-square ubox-rounded ubg-hover ubg-active ubtn toast-close\">\n                        <div class=\"ubtn-inner\">\n                            <span class=\"ubtn-ic ubtn-ic-left\">\n                                <img src=\"/paymentv2/Images/icons-color/invert/default/24x24-close.svg\" alt=\"\" class=\"ic-default\">\r\n                    \n                            </span>\n                        </div>\n                    </button>\n                </div>\n            </div>\n            <div class=\"modal fade\" id=\"modalPromoDetails\" role=\"dialog\" aria-labelledby=\"exampleModalLabel\" aria-hidden=\"true\" style=\"z-index: 3002\">\n                <div class=\"modal-dialog modal-dialog-centered modal-size-sm modal-mobile-full modal-dialog-scrollable\" role=\"document\">\n                    <div class=\"modal-content\">\n                        <input type=\"text\" name=\"promoCode\" class=\"hidden\" />\n                        <div class=\"modal-header no-p no-minheight\">\n                            <div class=\"modal-wrap\">\n                                <a data-bs-dismiss=\"modal\" class=\"ubg-default-80 ubox-size-button-default ubox-square ubox-rounded ubg-hover ubg-active ubtn modal-close-btn\">\n                                    <div class=\"ubtn-inner\">\n                                        <span class=\"ubtn-ic ubtn-ic-left\">\n                                            <img src=\"/paymentv2/Images/icons-color/invert/default/24x24-close.svg\" alt=\"\" class=\"ic-default\">\r\n                                \n                                        </span>\n                                    </div>\n                                </a>\n                            </div>\n                        </div>\n                        <div class=\"modal-body\">\n                            <div class=\"modal-body-full\">\n                                <div class=\"promo-info-banner\">\n                                    <div class=\"promo-info-banner-inner\">\n                                        <img src=\"/paymentv2/Images/img/mics/gift.jpg\" alt=\"\">\r\n                            \n                                    </div>\n                                </div>\n                            </div>\n                            <div class=\"promo-info-box\">\n                                <div class=\"h2 promo-summary\"></div>\n                                <div class=\"p promo-end-time-wrapper\" style=\"display: none\">\n                                    <span class=\"color-sub-default\">HSD: </span>\n                                    <span class=\"promo-end-time\"></span>\n                                </div>\n                                <div class=\"p1 color-warning promo-apply-status-message\" style=\"display: none\"></div>\n                                <div class=\"mt16\">\n                                    <div class=\"ulabel-status ulabel-size-xl up ubg-porcelain color-sub-default\">\n                                        <div class=\"row row-border row-8 align-items-center\">\n                                            <div class=\"col promo-code\"></div>\n                                            <div class=\"col-auto\">\n                                                <div class=\"u-label-border-left\">\n                                                    <a data-bs-tooltip=\"tooltip\" title=\"Sao ch&#233;p\" data-trigger=\"hover\" class=\"ubg-transparent ubox-size-button-xxs ubox-square ubg-hover ubg-active ubtn btn-copy-promo\">\n                                                        <div class=\"ubtn-inner\">\n                                                            <span class=\"ubtn-ic ubtn-ic-left\">\n                                                                <img src=\"/paymentv2/Images/icons-color/default2/default/24x24-copy.svg\" alt=\"\" class=\"ic-sm\">\r\n                                                    \n                                                            </span>\n                                                        </div>\n                                                    </a>\n                                                </div>\n                                            </div>\n                                        </div>\n                                    </div>\n                                </div>\n                            </div>\n                            <div class=\"list-mb12 list-last-mb\">\n                                <div class=\"p1 promo-benefits\"></div>\n                                <div class=\"h3\">Điều kiện &#225;p dụng</div>\n                                <div class=\"p1 promo-conditions\"></div>\n                                <div class=\"p1\">Không sử dụng cùng với các khuyến mại khác của VNPAY.\n                                    <br>\n                                    <br>Chương trình sẽ kết thúc khi hết hạn thời gian diễn ra hoặc hết lượt sử dụng mã ưu đãi của chương trình.\n                                    <br>\n                                    <br>Ưu đãi sẽ không được cấp lại nếu đơn hàng bị hủy hoặc yêu cầu trả hàng/hoàn tiền vì bất kỳ lí do gì.\n                                    <br>\n                                    <br>Ưu đãi không có giá trị quy đổi thành tiền mặt hoặc chuyển nhượng dưới bất kỳ hình thức nào.\n                                    <br>\n                                    <br>Chương trình không áp dụng cho các đơn hàng có dấu hiệu lạm dụng khuyến mại hoặc không thỏa mãn đủ các điều kiện yêu cầu.\n                                    <br>\n                                    <br>Nếu có thắc mắc hoặc vấn đề liên quan đến chương trình, Quý khách vui lòng liên hệ hotline 1900 55 55 77 trong vòng 24h từ lúc có sự cố phát sinh.\n                                </div>\n                            </div>\n                        </div>\n                        <div class=\"modal-footer justify-content-center\">\n                            <div class=\"ubtn-group list-mb16 list-crop row row-16 justify-content-center group-col-md-3 group-col-fill\">\n                                <div class=\"group-col-item\">\n                                    <a href=\"#\" class=\"ubg-sub-primary ubox-size-button-default ubg-hover ubg-active ubtn btn-cancel-promo\" style=\"display: none\">\n                                        <div class=\"ubtn-inner\">\n                                            <span class=\"ubtn-text\">Hủy &#225;p dụng</span>\n                                        </div>\n                                    </a>\n                                    <a href=\"#\" class=\"ubg-primary ubox-size-button-default ubg-hover ubg-active ubtn btn-apply-promo\" style=\"display: none\">\n                                        <div class=\"ubtn-inner\">\n                                            <span class=\"ubtn-text\">&#193;p dụng</span>\n                                        </div>\n                                    </a>\n                                    <button disabled class=\"ubg-porcelain ubox-size-button-default ubg-hover ubg-active ubtn btn-unavailable-promo\" style=\"display: none\">\n                                        <div class=\"ubtn-inner\">\n                                            <span class=\"ubtn-text\">Kh&#244;ng khả dụng</span>\n                                        </div>\n                                    </button>\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n            </div>\n            <footer class=\"footer main-footer show-desktop\">\n                <div class=\"footer-inner text-center\">\r\n                Phát triển bởi VNPAY &copy; 2023\r\n            </div>\n            </footer>\n        </div>\n        <div class=\"chat-box show-desktop\">\n            <div class=\"chat-box-icon\">\n                <a href=\"https://zalo.me/4134983655549474109\" target=\"_blank\">\n                    <img src=\"/paymentv2/images/img/logos/zalo.svg\" alt=\"\">\r\n            \n                </a>\n            </div>\n        </div>\n        <!-- _custom.footerMobile -->\n        <div class=\"footer_mobile show-mobile\">\n            <div class=\"footer_mobile-inner\">\n                <div class=\"row row-32 align-items-center\">\n                    <div class=\"col\">\n                        <div class=\"inline-block\">\n                            <!-- button.button -->\n                            <a class=\"ubg-ghost ubox-size-button-sm ubg-hover ubg-active ubtn\" href=\"/paymentv2/Ncb/Transaction/Index.html?token=b1f340ca2e8f4a5ba32cd3c137d2db92&amp;vnp_Locale=en-US\">\n                                <div class=\"ubtn-inner\">\n                                    <span class=\"ubtn-ic ubtn-ic-left\">\n                                        <img src=\"/paymentv2/images/img/flags/en.svg\" alt=\"\" class=\"ic-xl\">\r\n                                \n                                    </span>\n                                    <span class=\"ubtn-text\">En</span>\n                                </div>\n                            </a>\n                            <!-- end button.button -->\r\n                    \n                        </div>\n                    </div>\n                    <div class=\"col-auto\">\n                        <div class=\"row row-0\">\n                            <div class=\"col-auto\">\n                                <!-- button.button -->\n                                <a href=\"https://zalo.me/4134983655549474109\" class=\"ubg-transparent ubox-size-button-default ubox-square ubg-hover ubg-active ubtn\">\n                                    <div class=\"ubtn-inner\">\n                                        <span class=\"ubtn-ic ubtn-ic-left\">\n                                            <img src=\"/paymentv2/images/img/logos/zalo.svg\" alt=\"\" class=\"ic-default\">\r\n                                    \n                                        </span>\n                                    </div>\n                                </a>\n                                <!-- end button.button -->\r\n                        \n                            </div>\n                            <div class=\"col-auto\">\n                                <!-- button.button -->\n                                <a href=\"tel:1900555577\" class=\"ubg-transparent ubox-size-button-default ubox-square ubg-hover ubg-active ubtn\">\n                                    <div class=\"ubtn-inner\">\n                                        <span class=\"ubtn-ic ubtn-ic-left\">\n                                            <img src=\"/paymentv2/images/icons-color/default/default/24x24-phone.svg\" alt=\"\" class=\"ic-default\">\r\n                                    \n                                        </span>\n                                    </div>\n                                </a>\n                                <!-- end button.button -->\r\n                        \n                            </div>\n                            <div class=\"col-auto\">\n                                <!-- button.button -->\n                                <a href=\"mailto:hotro@vnpay.vn\" class=\"ubg-transparent ubox-size-button-default ubox-square ubg-hover ubg-active ubtn\">\n                                    <div class=\"ubtn-inner\">\n                                        <span class=\"ubtn-ic ubtn-ic-left\">\n                                            <img src=\"/paymentv2/images/icons-color/default/default/24x24-email.svg\" alt=\"\" class=\"ic-default\">\r\n                                    \n                                        </span>\n                                    </div>\n                                </a>\n                                <!-- end button.button -->\r\n                        \n                            </div>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n        <!-- end _custom.footerMobile -->\n        <!-- modal.modalAlert -->\n        <!-- modal.modal -->\n        <div class=\"modal fade text-center\" id=\"modalCancelPayment\" role=\"dialog\" aria-labelledby=\"exampleModalLabel\" aria-hidden=\"true\">\n            <div class=\"modal-dialog modal-dialog-centered modal-size-alert-default modal-dialog-scrollable modal-alert\" role=\"document\">\n                <div class=\"modal-content\">\n                    <div class=\"modal-header\">\n                        <div class=\"modal-wrap\">\n                            <div class=\"row row-16 modal-title-wrap\">\n                                <div class=\"col-12 text-center\">\n                                    <h2 class=\"modal-title h2\">\r\n                                    Hủy thanh to&#225;n\r\n                                </h2>\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                    <div class=\"modal-body color-sub-default fz-h3\">\r\n                    Qu&#253; kh&#225;ch c&#243; chắc chắn muốn hủy thanh to&#225;n giao dịch n&#224;y?\r\n                </div>\n                    <div class=\"modal-footer justify-content-center\">\n                        <!-- button.btnGroup -->\n                        <div class=\"ubtn-group list-mb16 list-crop row row-16 justify-content-center group-col-md-3 group-col-fill\">\n                            <div class=\"group-col-item\">\n                                <!-- button.button -->\n                                <a data-bs-dismiss=\"modal\" class=\"ubg-secondary ubox-size-button-default ubg-hover ubg-active ubtn\">\n                                    <div class=\"ubtn-inner\">\n                                        <span class=\"ubtn-text\">Đ&#243;ng</span>\n                                    </div>\n                                </a>\n                                <!-- end button.button -->\r\n                        \n                            </div>\n                            <div class=\"group-col-item\">\n                                <!-- button.button -->\n                                <a data-bs-dismiss=\"modal\" href=\"#\" class=\"ubg-danger ubox-size-button-default ubg-hover ubg-active ubtn\" onclick=\"cancelConfirm()\">\n                                    <div class=\"ubtn-inner\">\n                                        <span class=\"ubtn-text\">X&#225;c nhận hủy</span>\n                                    </div>\n                                </a>\n                                <!-- end button.button -->\r\n                        \n                            </div>\n                        </div>\n                        <!-- end button.btnGroup -->\r\n                \n                    </div>\n                </div>\n            </div>\n        </div>\n        <!-- end modal.modal -->\n        <!-- end modal.modalAlert -->\n        <!-- modal.modalAlert -->\n        <!-- modal.modal -->\n        <div class=\"modal fade text-center\" id=\"modalNotifySupportQR\" role=\"dialog\" aria-labelledby=\"modalNotifySupportQR\" aria-hidden=\"true\">\n            <div class=\"modal-dialog modal-dialog-centered modal-size-alert-default modal-dialog-scrollable modal-alert\" role=\"document\">\n                <div class=\"modal-content\">\n                    <div class=\"modal-body color-sub-default fz-h3\" id=\"messageNotify\">\r\n                    Qu&#253; kh&#225;ch c&#243; chắc chắn muốn hủy thanh to&#225;n giao dịch n&#224;y?\r\n                </div>\n                    <div class=\"modal-footer justify-content-center\">\n                        <!-- button.btnGroup -->\n                        <div class=\"ubtn-group list-mb16 list-crop row row-16 justify-content-center group-col-md-3 group-col-fill\">\n                            <div class=\"group-col-item\">\n                                <!-- button.button -->\n                                <a data-bs-dismiss=\"modal\" class=\"ubg-secondary ubox-size-button-default ubg-hover ubg-active ubtn\">\n                                    <div class=\"ubtn-inner\">\n                                        <span class=\"ubtn-text\">Đ&#243;ng</span>\n                                    </div>\n                                </a>\n                                <!-- end button.button -->\r\n                        \n                            </div>\n                        </div>\n                        <!-- end button.btnGroup -->\r\n                \n                    </div>\n                </div>\n            </div>\n        </div>\n        <!-- end modal.modal -->\n        <!-- end modal.modalAlert -->\n        <!-- modal.modalAlert -->\n        <!-- modal.modal -->\n        <div class=\"modal fade text-center\" id=\"modalNotifyOpenNewTab\" role=\"dialog\" aria-labelledby=\"modalNotifyOpenNewTab\" aria-hidden=\"true\">\n            <div class=\"modal-dialog modal-dialog-centered modal-size-alert-default modal-dialog-scrollable modal-alert\" role=\"document\">\n                <div class=\"modal-content\">\n                    <div class=\"modal-body color-sub-default fz-h3\">\r\n                    Qu&#253; kh&#225;ch đang thực hiện giao dịch ở 1 m&#224;n h&#236;nh kh&#225;c. Qu&#253; kh&#225;ch vui l&#242;ng chỉ thực hiện giao dịch tr&#234;n 1 m&#224;n h&#236;nh. Tr&#226;n trọng cảm ơn Qu&#253; kh&#225;ch v&#224; xin lỗi v&#236; sự bất tiện n&#224;y.\r\n                </div>\n                    <div class=\"modal-footer justify-content-center\">\n                        <!-- button.btnGroup -->\n                        <div class=\"ubtn-group list-mb16 list-crop row row-16 justify-content-center group-col-md-3 group-col-fill\">\n                            <div class=\"group-col-item\">\n                                <!-- button.button -->\n                                <a href=\"#\" class=\"ubg-secondary ubox-size-button-default ubg-hover ubg-active ubtn\" onclick=\"cancelConfirm()\">\n                                    <div class=\"ubtn-inner\">\n                                        <span class=\"ubtn-text\">Đ&#243;ng</span>\n                                    </div>\n                                </a>\n                                <!-- end button.button -->\r\n                        \n                            </div>\n                        </div>\n                        <!-- end button.btnGroup -->\r\n                \n                    </div>\n                </div>\n            </div>\n        </div>\n        <!-- end modal.modal -->\n        <!-- end modal.modalAlert -->\r\n\n    </body>\n    <!-- jquery -->\n    <script src=\"/paymentv2/Scripts/vendors/jquery/jquery.bundles.js\"></script>\n    <script src=\"/paymentv2/Scripts/vendors/jquery/jquery.init.js\"></script>\n    <!-- jquery -->\n    <!-- bootstrap -->\n    <script src=\"/paymentv2/Scripts/vendors/bootstrap/bootstrap.bundles.js\"></script>\n    <script src=\"/paymentv2/Scripts/vendors/bootstrap/bootstrap.init.js\"></script>\n    <!-- bootstrap -->\n    <!-- select2 -->\n    <script src=\"/paymentv2/Scripts/vendors/select2/select2.bundles.js\"></script>\n    <script src=\"/paymentv2/Scripts/vendors/select2/select2.init.js\"></script>\n    <!-- select2 -->\n    <!-- parsley -->\n    <script src=\"/paymentv2/Scripts/vendors/parsley/parsley.bundles.js\"></script>\n    <script src=\"/paymentv2/Scripts/vendors/parsley/parsley.init.js\"></script>\n    <!-- parsley -->\n    <!-- cleave -->\n    <script src=\"/paymentv2/Scripts/vendors/cleave/cleave.bundles.js\"></script>\n    <script src=\"/paymentv2/Scripts/vendors/cleave/cleave.init.js\"></script>\n    <!-- cleave -->\n    <!-- autosize -->\n    <script src=\"/paymentv2/Scripts/vendors/autosize/autosize.bundles.js\"></script>\n    <script src=\"/paymentv2/Scripts/vendors/autosize/autosize.init.js\"></script>\n    <script src=\"/paymentv2/Scripts/vendors/datetimepicker/moment.js\"></script>\n    <script src=\"/paymentv2/Scripts/vendors/datetimepicker/bootstrap-datetimepicker.min.js\"></script>\n    <!-- autosize -->\n    <!-- script use for this page only -->\n    <!-- end script for this page only -->\n    <script src=\"/paymentv2/Scripts/custom.min.js?rnd=1526549191\"></script>\n    <!-- script use for this page only -->\n    <!-- end script for this page only -->\n    <script src=\"/paymentv2/Scripts/ua-parser.min.js\" type=\"text/javascript\"></script>\n    <script>\r\n    var errorUrl = '/paymentv2/Payment/Error.html?code=15';\r\n    \r\n        function cancelConfirm() {\r\n            var x = this;\r\n            var postData ={\"btnCancel\": \"confirm\"};\r\n            var submitUrl = $(x).closest('form').attr(\"action\");\r\n            $(\".loading\").show();\r\n            $.ajax({\r\n                type: \"POST\",\r\n                url: submitUrl,\r\n                data: postData,\r\n                dataType: 'JSON',\r\n                success: function (data) {\r\n                    if (data.code === '00') {\r\n                        //Check ifram container\r\n                        if (self === top) {\r\n                            //  location.href = data.url;\r\n                            setTimeout(function () {location.href = data.url;},200);\r\n                        } else {\r\n                            //  window.top.location.href = data.url;\r\n                            setTimeout(function () { window.top.location.href = data.url; }, 200);\r\n                        }\r\n                        return false;\r\n                    } else {\r\n                        if (data.code === '100') {\r\n                            alert('Quý khách không thể thực hiện hủy do giao dịch đã được thanh toán thành công. Quý khách sẽ được chuyển hướng về trang mua hàng ngay sau đây.')\r\n                            //Check ifram container\r\n                            if (self === top) {\r\n                                //  location.href = data.url;\r\n                                setTimeout(function () { location.href = data.url; }, 2000);\r\n                            } else {\r\n                                //  window.top.location.href = data.url;\r\n                                setTimeout(function () { window.top.location.href = data.url; }, 2000);\r\n                            }\r\n                        } else {\r\n                            alert(data.message);\r\n                        }\r\n                        return false;\r\n                    }\r\n                }\r\n            });\r\n            $(\".loading\").hide();\r\n            return false;\r\n        }\r\n</script>\n    <script src=\"/paymentv2/Scripts/jquery.signalR-2.4.3.min.js\"></script>\n    <script type=\"text/javascript\">\r\n    $(function() {\r\n        var notify = $.connection('/paymentv2/notify');\r\n        notify.qs = { token: \"b1f340ca2e8f4a5ba32cd3c137d2db92\" ,xid:\"2149265\"};\r\n        notify.received(function(data) {\r\n            try {\r\n                var msg = JSON.parse(data);\r\n                switch(msg.msgtype) {\r\n                    case \"displayqr\":\r\n                        $(\"#qrCode\").attr(\"src\", msg.data);\r\n                        $(\"#qrCode\").show();\r\n                         break;\r\n                    case \"confirm\":\r\n                        notify.stop();\r\n                        top.location.href = msg.data;\r\n                        break;\r\n                }\r\n            } catch (e) {\r\n                if (window.console) {\r\n                    window.console.log(e);\r\n                }\r\n            }\r\n        });\r\n        notify.reconnected(function() {\r\n            try {\r\n                 notify.start();\r\n                 if (window.console) {\r\n                    window.console.log(\"Reconnect to server\");\r\n                }\r\n            }\r\n            catch (e) {\r\n                window.console.log(\"Reconnect to server exception: \" + e);\r\n            }\r\n        });\r\n        notify.disconnected(function () {\r\n            window.console.log(\"Disconnected to server\");\r\n            setTimeout(function () {\r\n                notify.start();\r\n            }, 5000); // Restart connection after 5 seconds.\r\n        });\r\n        notify.start();\r\n\r\n        notify.connectionSlow(function () {\r\n            window.console.log(\"UserOfConnectionProblem\");\r\n        });\r\n    });\r\n</script>\n    <script src=\"/paymentv2/Scripts/jquery.cardvalidate.js?rnd=1526549191\"></script>\n    <script src=\"/paymentv2/Scripts/promotion.js?rnd=1526549191\"></script>\n    <script type=\"text/javascript\">\r\n        function valid_credit_card(cardNumber) {\r\n            // accept only digits, dashes or spaces\r\n            if (/[^0-9-\\s]+/.test(cardNumber)) return false;\r\n            // The Luhn Algorithm. It's so pretty.\r\n            var nCheck = 0, nDigit = 0, bEven = false;\r\n            cardNumber = cardNumber.replace(/\\D/g, \"\");\r\n            for (var n = cardNumber.length - 1; n >= 0; n--) {\r\n                var cDigit = cardNumber.charAt(n),\r\n                    nDigit = parseInt(cDigit, 10);\r\n                if (bEven) {\r\n                    if ((nDigit *= 2) > 9) nDigit -= 9;\r\n                }\r\n                nCheck += nDigit;\r\n                bEven = !bEven;\r\n            }\r\n            // console.log('Value:' + cardNumber + ' , result=' + ((nCheck % 10) === 0));\r\n            return (nCheck % 10) == 0;\r\n        }\r\n        var bincode = {};\r\nbincode['970400']='ABBANK'; bincode['970401']='MHB'; bincode['970403']='SACOMBANK'; bincode['970405']='AGRIBANK'; bincode['970406']='DONGABANK'; bincode['970407']='TECHCOMBANK'; bincode['970408']='GPBANK'; bincode['970409']='BACABANK'; bincode['970410']='SCBANK'; bincode['970412']='PVCOMBANK'; bincode['970414']='OJB'; bincode['970415']='VIETINBANK'; bincode['970416']='ACB'; bincode['970417']='PNB'; bincode['970418']='BIDV'; bincode['970419']='NCB'; bincode['970421']='VRB'; bincode['970422']='MBBANK'; bincode['970423']='TPBANK'; bincode['970424']='SHINHANBANK'; bincode['970425']='ABBANK'; bincode['970426']='MSBANK'; bincode['970427']='VIETABANK'; bincode['970428']='NAMABANK'; bincode['970429']='SCB'; bincode['970430']='PGBANK'; bincode['970431']='EXIMBANK'; bincode['970432']='VPBANK'; bincode['970433']='VIETBANK'; bincode['970434']='IVB'; bincode['970436']='VIETCOMBANK'; bincode['970437']='HDBANK'; bincode['970438']='BAOVIETBANK'; bincode['970439']='VIDBANK'; bincode['970440']='SEABANK'; bincode['970441']='VIB'; bincode['970442']='HLBANK'; bincode['970443']='SHB'; bincode['970444']='VCBANK'; bincode['970446']='COOPERBANK'; bincode['970448']='OCB'; bincode['970449']='LIENVIETBANK'; bincode['970451']='MDB'; bincode['970452']='KIENLONGBANK'; bincode['483542']='VISA'; bincode['461932']='VISA'; bincode['436467']='VISA'; bincode['436468']='VISA'; bincode['457526']='VISA'; bincode['457560']='VISA'; bincode['457561']='VISA'; bincode['436545']='VISA'; bincode['436546']='VISA'; bincode['436547']='VISA'; bincode['436548']='VISA'; bincode['437420']='VISA'; bincode['437421']='VISA'; bincode['450180']='VISA'; bincode['450181']='VISA'; bincode['476636']='VISA'; bincode['457319']='VISA'; bincode['469672']='VISA'; bincode['469673']='VISA'; bincode['469674']='VISA'; bincode['469676']='VISA'; bincode['469678']='VISA'; bincode['437893']='VISA'; bincode['437894']='VISA'; bincode['437895']='VISA'; bincode['466236']='VISA'; bincode['466237']='VISA'; bincode['466238']='VISA'; bincode['466582']='VISA'; bincode['466583']='VISA'; bincode['466584']='VISA'; bincode['466585']='VISA'; bincode['450482']='VISA'; bincode['462478']='VISA'; bincode['462479']='VISA'; bincode['498766']='VISA'; bincode['498767']='VISA'; bincode['498768']='VISA'; bincode['498769']='VISA'; bincode['445094']='VISA'; bincode['421595']='VISA'; bincode['462843']='VISA'; bincode['462844']='VISA'; bincode['458440']='VISA'; bincode['445093']='VISA'; bincode['437841']='VISA'; bincode['462842']='VISA'; bincode['511409']='MASTERCARD'; bincode['437374']='VISA'; bincode['356611']='JCB'; bincode['520000']='MASTERCARD'; bincode['555555']='MASTERCARD'; bincode['340000']='AMEX'; bincode['970460']='VIETCREDIT'; bincode['444000']='VISA'; bincode['333700']='JCB'; bincode['1337']='1337'; bincode['970468']='MAFC'; bincode['411111']='VISA'; bincode['970402']='VIETBANK'; bincode['511957']='MASTERCARD'; bincode['530515']='MASTERCARD'; bincode['400000']='VISA'; bincode['522818']='MASTERCARD'; bincode['537158']='MASTERCARD'; bincode['540392']='MASTERCARD'; bincode['510235']='MASTERCARD'; bincode['545579']='MASTERCARD'; bincode['510995']='MASTERCARD'; bincode['521976']='MASTERCARD'; bincode['524187']='MASTERCARD'; bincode['532451']='MASTERCARD'; bincode['533948']='MASTERCARD'; bincode['518685']='MASTERCARD'; bincode['521093']='MASTERCARD'; bincode['546235']='MASTERCARD'; bincode['548566']='MASTERCARD'; bincode['537032']='MASTERCARD'; bincode['548471']='MASTERCARD'; bincode['549244']='MASTERCARD'; bincode['554602']='MASTERCARD'; bincode['528643']='MASTERCARD'; bincode['530572']='MASTERCARD'; bincode['542172']='MASTERCARD'; bincode['516995']='MASTERCARD'; bincode['524083']='MASTERCARD'; bincode['528645']='MASTERCARD'; bincode['533147']='MASTERCARD'; bincode['533968']='MASTERCARD'; bincode['528658']='MASTERCARD'; bincode['529038']='MASTERCARD'; bincode['533398']='MASTERCARD'; bincode['533587']='MASTERCARD'; bincode['524686']='MASTERCARD'; bincode['542853']='MASTERCARD'; bincode['548370']='MASTERCARD'; bincode['519930']='MASTERCARD'; bincode['520395']='MASTERCARD'; bincode['520399']='MASTERCARD'; bincode['521377']='MASTERCARD'; bincode['522384']='MASTERCARD'; bincode['523975']='MASTERCARD'; bincode['524394']='MASTERCARD'; bincode['528626']='MASTERCARD'; bincode['559073']='MASTERCARD'; bincode['512824']='MASTERCARD'; bincode['526887']='MASTERCARD'; bincode['531828']='MASTERCARD'; bincode['533825']='MASTERCARD'; bincode['510417']='MASTERCARD'; bincode['526790']='MASTERCARD'; bincode['537018']='MASTERCARD'; bincode['545968']='MASTERCARD'; bincode['546555']='MASTERCARD'; bincode['559312']='MASTERCARD'; bincode['526418']='MASTERCARD'; bincode['546284']='MASTERCARD'; bincode['546285']='MASTERCARD'; bincode['547886']='MASTERCARD'; bincode['549054']='MASTERCARD'; bincode['546734']='MASTERCARD'; bincode['546327']='MASTERCARD'; bincode['546022']='MASTERCARD'; bincode['548362']='MASTERCARD'; bincode['550017']='MASTERCARD'; bincode['512414']='MASTERCARD'; bincode['512701']='MASTERCARD'; bincode['520032']='MASTERCARD'; bincode['530581']='MASTERCARD'; bincode['543846']='MASTERCARD'; bincode['548489']='MASTERCARD'; bincode['548936']='MASTERCARD'; bincode['512341']='MASTERCARD'; bincode['526830']='MASTERCARD'; bincode['525673']='MASTERCARD'; bincode['531167']='MASTERCARD'; bincode['534146']='MASTERCARD'; bincode['547587']='MASTERCARD'; bincode['549794']='MASTERCARD'; bincode['554571']='MASTERCARD'; bincode['620009']='UPI'; bincode['621055']='UPI'; bincode['625002']='UPI'; bincode['970458']='UOB'; bincode['412975']='VISA'; bincode['458584']='VISA'; bincode['412976']='VISA'; bincode['412977']='VISA'; bincode['428310']='VISA'; bincode['436762']='VISA'; bincode['461136']='VISA'; bincode['404169']='VISA'; bincode['421494']='VISA'; bincode['422109']='VISA'; bincode['426926']='VISA'; bincode['436599']='VISA'; bincode['479138']='VISA'; bincode['479139']='VISA'; bincode['479140']='VISA'; bincode['405573']='VISA'; bincode['426671']='VISA'; bincode['404152']='VISA'; bincode['418159']='VISA'; bincode['422094']='VISA'; bincode['423960']='VISA'; bincode['436308']='VISA'; bincode['436309']='VISA'; bincode['437422']='VISA'; bincode['437423']='VISA'; bincode['437424']='VISA'; bincode['452999']='VISA'; bincode['457485']='VISA'; bincode['469655']='VISA'; bincode['404184']='VISA'; bincode['404185']='VISA'; bincode['433286']='VISA'; bincode['439198']='VISA'; bincode['457271']='VISA'; bincode['457327']='VISA'; bincode['459804']='VISA'; bincode['459805']='VISA'; bincode['459817']='VISA'; bincode['459818']='VISA'; bincode['469374']='VISA'; bincode['470570']='VISA'; bincode['474815']='VISA'; bincode['474825']='VISA'; bincode['498794']='VISA'; bincode['498795']='VISA'; bincode['498796']='VISA'; bincode['406771']='VISA'; bincode['411153']='VISA'; bincode['414143']='VISA'; bincode['428695']='VISA'; bincode['457600']='VISA'; bincode['476632']='VISA'; bincode['476633']='VISA'; bincode['437767']='VISA'; bincode['437768']='VISA'; bincode['486279']='VISA'; bincode['486280']='VISA'; bincode['486282']='VISA'; bincode['486283']='VISA'; bincode['422151']='VISA'; bincode['426088']='VISA'; bincode['429418']='VISA'; bincode['436361']='VISA'; bincode['436438']='VISA'; bincode['436445']='VISA'; bincode['437508']='VISA'; bincode['457573']='VISA'; bincode['457575']='VISA'; bincode['461137']='VISA'; bincode['461138']='VISA'; bincode['461139']='VISA'; bincode['461140']='VISA'; bincode['462881']='VISA'; bincode['464932']='VISA'; bincode['466243']='VISA'; bincode['467964']='VISA'; bincode['468789']='VISA'; bincode['468945']='VISA'; bincode['468946']='VISA'; bincode['468947']='VISA'; bincode['468948']='VISA'; bincode['469654']='VISA'; bincode['472074']='VISA'; bincode['472075']='VISA'; bincode['478082']='VISA'; bincode['486265']='VISA'; bincode['422075']='VISA'; bincode['422076']='VISA'; bincode['422149']='VISA'; bincode['422150']='VISA'; bincode['429683']='VISA'; bincode['436469']='VISA'; bincode['436470']='VISA'; bincode['436471']='VISA'; bincode['450798']='VISA'; bincode['457353']='VISA'; bincode['478097']='VISA'; bincode['488971']='VISA'; bincode['414152']='VISA'; bincode['419661']='VISA'; bincode['419662']='VISA'; bincode['431742']='VISA'; bincode['471249']='VISA'; bincode['490240']='VISA'; bincode['490241']='VISA'; bincode['428472']='VISA'; bincode['469682']='VISA'; bincode['469683']='VISA'; bincode['469684']='VISA'; bincode['469685']='VISA'; bincode['486383']='VISA'; bincode['472674']='VISA'; bincode['484803']='VISA'; bincode['484804']='VISA'; bincode['484805']='VISA'; bincode['484806']='VISA'; bincode['408904']='VISA'; bincode['442415']='VISA'; bincode['442416']='VISA'; bincode['467078']='VISA'; bincode['467079']='VISA'; bincode['470548']='VISA'; bincode['470549']='VISA'; bincode['457328']='VISA';\r\n        var timer = 899;\r\n        var minDate = new Date(2003, 01);\r\n        var maxDate = new Date(2023, 4);\r\n        $(document).ready(function () {\r\n            $(document)\r\n                .ajaxStart(function () {\r\n                    $(\".loading\").show();\r\n                })\r\n                .ajaxStop(function () {\r\n                    $(\".loading\").hide();\r\n                });\r\n\r\n\t\t\t$('#cardVerify').promotion({\r\n                cardNumberInput: $('#cardNumber'),\r\n                cardDateInput: $('#cardDate'),\r\n                ordertoken: 'b1f340ca2e8f4a5ba32cd3c137d2db92',\r\n                bankLogo: '/paymentv2/images/img/logos/bank/big/ncb.svg'\r\n            });\r\n            \r\n            $(\"#cardNumber\").cardNumberMask(bincode);\r\n\r\n            //Card holder event\r\n            $(\"#cardHolder\").keypress(function(e) {\r\n                //Check control+c,ctrl+v,// var ctrlKey = 17, cKey = 67, vKey = 86;\r\n                //Shift+Arrow key\r\n                if (e.shiftKey && (e.which === 37 || e.which === 39)) {\r\n                    return true;\r\n                }\r\n                //Arrow key\r\n                if (e.keyCode === 37 || e.keyCode === 39) {\r\n                    return true;\r\n                }\r\n                if (e.ctrlKey && (e.which === 67 || e.which === 86)) {\r\n                    return true;\r\n                }\r\n                if (e.keyCode === 8 || e.keyCode === 46) {\r\n                    return true;\r\n                }\r\n                var inputVal = String.fromCharCode(e.which);\r\n                var characterReg = /^\\s*[a-zA-Z,\\s]+\\s*$/;\r\n                if (!characterReg.test(inputVal)) {\r\n                    return false;\r\n                }\r\n                return true;\r\n            });\r\n\r\n            $(\"#cardDate\").keyup(function(e) {\r\n                //8: Backspace\r\n                //46: delete\r\n                //37, 39: arrow left, right\r\n                if (e.keyCode === 8 || e.keyCode === 46 || e.keyCode === 37 || e.keyCode === 39) {\r\n                    return true;\r\n                }\r\n\r\n                $(this).val(function(i, v) {\r\n                    if (v === null || v === undefined || v === \"\") {\r\n                        return '';\r\n                    } else {\r\n                        var x = v.replace(/[^\\d]/g, '');\r\n                        if (v.length >= 2) {\r\n                            //var mm = x.substring(0, 2);\r\n                            var temp = v.split('/');\r\n                            if (e.keyCode === 191 || v.length >= 2) {\r\n                                if (parseInt(temp[0]) < 10 && temp[0].length < 2) {\r\n                                    x = \"0\" + x.toString();\r\n                                }\r\n                            }\r\n                            var mm = x.substring(0, 2);\r\n\r\n                            if (parseInt(mm) > 12) {\r\n                                mm = 12;\r\n                            }\r\n\r\n                            var yy = x.substring(2, x.length);\r\n\r\n                            return mm + \"/\" + yy;\r\n                        } else {\r\n                            if (e.keyCode === 191 || v.length > 2) {\r\n                                if (parseInt(x) < 10) {\r\n                                    x = \"0\" + x;\r\n                                }\r\n                            }\r\n                            return x;\r\n                        }\r\n                    }\r\n                });\r\n            });\r\n\r\n            $('#card_number_mask').keydown(function(e) {\r\n                if (e.which === 13) {\r\n                    if ($(\"#cardDate\").hasClass(\"disabled\")) {\r\n                        $('#cardHolder').focus();\r\n                    } else {\r\n                        $(\"#cardDate\").focus();\r\n                    }\r\n                }\r\n                $(\".display_error\").hide();\r\n            });\r\n            $('#cardDate').keydown(function(e) {\r\n                if (e.which === 13) {\r\n                    $('#btnContinue').focus();\r\n                }\r\n                $(\".display_error\").hide();\r\n            });\r\n            $('#cardHolder').keydown(function(e) {\r\n                if (e.which === 13) {\r\n                    $(\"#cardDate\").focus();\r\n                }\r\n                $(\".display_error\").hide();\r\n            });\r\n\r\n        });\r\n        $(\"#cardVerify\").submit(function(e) {\r\n            e.preventDefault();\r\n            var valid = $('#cardVerify').parsley().validate();\r\n            if (valid) {\r\n            $(\".loading\").show();\r\n            var current = $(this);\r\n            var postData = current.serialize();\r\n            $.ajax({\r\n                url: '/paymentv2/Ncb/Transaction/Index.html',\r\n                type: \"POST\",\r\n                dataType: \"JSON\",\r\n                data: postData,\r\n                    success: function(data) {\r\n                    if (data.code === \"00\") {\r\n                        //  $(\"#divSubmit\").addClass(\"has-success\");\r\n                        //Check ifram container\r\n                        if (self === top) {\r\n                            location.href = data.url;\r\n                        } else {\r\n                            window.top.location.href = data.url;\r\n                        }\r\n                    } else {\r\n                        $('#backButton').hide();\r\n                        $('#lb_message_error').text(data.message);\r\n                        $(\".display_error\").show();\r\n                        // $(\".ubg-transparent\").hide();\r\n                    }\r\n                },\r\n                error: function () {\r\n                        $('#lb_message_error').text(\"Có lỗi xảy ra trong quá trình xử lý. Vui lòng liên hệ 1900 55 55 77 để được hỗ trợ\");\r\n                        $(\".display_error\").show();\r\n                        // $(\".ubg-transparent\").hide();\r\n                        }\r\n                });\r\n                }\r\n        });\r\n    \n    </script>\n</html>"
+				}
+			]
+		},
+		{
+			"name": "Plan All",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 42343242,\r\n    \"amount\": 5560000.0,\r\n    \"date\": \"2023-04-10T10:33:28.000+00:00\",\r\n    \"orderDesc\": \"Nap tien cho thue bao 0123456789\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/plan/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"plan",
+						"all"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Plan All",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 42343242,\r\n    \"amount\": 5560000.0,\r\n    \"date\": \"2023-04-10T10:33:28.000+00:00\",\r\n    \"orderDesc\": \"Nap tien cho thue bao 0123456789\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/plan/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"plan",
+								"all"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 15 Apr 2023 01:24:07 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"planName\": \"Gói 6 tháng\",\n        \"price\": 279000,\n        \"desciption\": \"Không bị làm phiền bởi quảng cáo\\r\\nNghe nhạc offline chất lượng Lossless\\r\\nUpload lên đến 1000 bài hát\\r\\nXem MV chất lượng Full HD\"\n    },\n    {\n        \"id\": 2,\n        \"planName\": \"Gói 1 năm\",\n        \"price\": 499000,\n        \"desciption\": \"Không bị làm phiền bởi quảng cáo\\r\\nNghe nhạc offline chất lượng Lossless\\r\\nUpload lên đến 1000 bài hát\\r\\nXem MV chất lượng Full HD\"\n    },\n    {\n        \"id\": 3,\n        \"planName\": \"Gói 2 năm\",\n        \"price\": 899000,\n        \"desciption\": \"Không bị làm phiền bởi quảng cáo\\r\\nNghe nhạc offline chất lượng Lossless\\r\\nUpload lên đến 1000 bài hát\\r\\nXem MV chất lượng Full HD\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Plan",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 42343242,\r\n    \"amount\": 5560000.0,\r\n    \"date\": \"2023-04-10T10:33:28.000+00:00\",\r\n    \"orderDesc\": \"Nap tien cho thue bao 0123456789\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/plan/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"plan",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Plan",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 42343242,\r\n    \"amount\": 5560000.0,\r\n    \"date\": \"2023-04-10T10:33:28.000+00:00\",\r\n    \"orderDesc\": \"Nap tien cho thue bao 0123456789\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/plan/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"plan",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 15 Apr 2023 01:24:48 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"planName\": \"Gói 6 tháng\",\n    \"price\": 279000,\n    \"desciption\": \"Không bị làm phiền bởi quảng cáo\\r\\nNghe nhạc offline chất lượng Lossless\\r\\nUpload lên đến 1000 bài hát\\r\\nXem MV chất lượng Full HD\"\n}"
+				}
+			]
+		}
+	]
+}
