@@ -2,6 +2,10 @@ package com.example.btlsoc.security;
 
 import com.example.btlsoc.jwt.JwtAuthFilter;
 import com.example.btlsoc.repository.UserRepository;
+import com.example.btlsoc.security.oauth2.CustomOAuth2UserService;
+import com.example.btlsoc.security.oauth2.HttpCookieOAuth2AuthorizationRequestRepository;
+import com.example.btlsoc.security.oauth2.OAuth2AuthenticationFailureHandler;
+import com.example.btlsoc.security.oauth2.OAuth2AuthenticationSuccessHandler;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -38,6 +42,19 @@ public class SecurityConfig {
     @Autowired
     private CustomUserDetailsService customUserDetailsService;
 
+    @Autowired
+    private CustomOAuth2UserService customOAuth2UserService;
+    @Autowired
+    private OAuth2AuthenticationSuccessHandler oAuth2AuthenticationSuccessHandler;
+
+    @Autowired
+    private OAuth2AuthenticationFailureHandler oAuth2AuthenticationFailureHandler;
+
+
+    @Bean
+    public HttpCookieOAuth2AuthorizationRequestRepository cookieAuthorizationRequestRepository() {
+        return new HttpCookieOAuth2AuthorizationRequestRepository();
+    }
 
     @Bean
     public JwtAuthFilter jwtAuthFilter(){
@@ -71,15 +88,31 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        return http.csrf().disable().authorizeHttpRequests()
-                .requestMatchers("/auth/**", "/payment_return", "/plan/**", "/song/**", "/artist/**", "/genre/**")
+        return http.cors().and()
+                .sessionManagement()
+                .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+                .and()
+                .csrf().disable().formLogin()
+                .disable()
+                .httpBasic()
+                .disable()
+                .authorizeHttpRequests()
+                .requestMatchers("/").permitAll()
+                .requestMatchers("/auth/**", "oauth2/**","/payment_return", "/plan/**", "/song/**", "/artist/**", "/genre/**", "/send-email/**")
                 .permitAll()
                 .anyRequest()
                 .authenticated()
                 .and()
-                .sessionManagement()
-                .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+                .oauth2Login()
+                .authorizationEndpoint()
+                .baseUri("/oauth2/authorize")
+                .authorizationRequestRepository(cookieAuthorizationRequestRepository())
                 .and()
+                .redirectionEndpoint()
+                .baseUri("/oauth2/callback/**")
+                .and()
+                .userInfoEndpoint()
+                .userService(customOAuth2UserService).and().successHandler(oAuth2AuthenticationSuccessHandler).failureHandler(oAuth2AuthenticationFailureHandler).and()
                 .authenticationProvider(authenticationProvider())
                 .addFilterBefore(jwtAuthFilter(), UsernamePasswordAuthenticationFilter.class)
                 .logout()
