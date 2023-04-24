@@ -2,6 +2,7 @@ package com.example.btlsoc.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIdentityReference;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -31,10 +32,12 @@ public class Song {
 
     @ManyToOne
     @JoinColumn(name = "genre_id", referencedColumnName = "genre_id")
+    @JsonIdentityReference(alwaysAsId = true)
     private Genre genre;
 
     @ManyToOne
     @JoinColumn(name = "artist_id", referencedColumnName = "artist_id")
+    @JsonIdentityReference(alwaysAsId = true)
     private Artist artist;
 
 }

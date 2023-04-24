@@ -11,7 +11,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 public class GenreController {
@@ -26,6 +28,17 @@ public class GenreController {
     @GetMapping("genre/all")
     public ResponseEntity<List<Genre>> getPlans(){
         return new ResponseEntity<>(genreService.findAll(), HttpStatus.OK);
+    }
+
+    @GetMapping("genre/{genreId}/songs")
+    public ResponseEntity<?> getSongsByGenre(@PathVariable(name = "genreId") int genreId) {
+        Genre genre = genreService.findById(genreId);
+        if (genre == null) {
+            Map<String, String> message = new HashMap<>();
+            message.put("message", "Không tìm thấy thể loại");
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(message);
+        }
+        return new ResponseEntity<>(genreService.findSongsById(genreId), HttpStatus.OK);
     }
 
 }

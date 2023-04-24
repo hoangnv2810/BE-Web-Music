@@ -2,6 +2,7 @@ package com.example.btlsoc.service.Impl;
 
 import com.example.btlsoc.model.Artist;
 import com.example.btlsoc.model.Genre;
+import com.example.btlsoc.model.Song;
 import com.example.btlsoc.repository.GenreRepository;
 import com.example.btlsoc.service.ArtistService;
 import com.example.btlsoc.service.GenreService;
@@ -22,5 +23,10 @@ public class GenreServiceImpl implements GenreService {
     @Override
     public Genre findById(int id) {
         return genreRepository.findById(id).get();
+    }
+
+    @Override
+    public List<Song> findSongsById(int genreId) {
+        return genreRepository.findSongsById(genreId);
     }
 }
