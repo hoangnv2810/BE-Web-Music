@@ -9,4 +9,7 @@ import lombok.NoArgsConstructor;
 @Data
 public class AuthResponse {
     private String accessToken;
+    private String username;
+    private AccountType accountType;
+    private String email;
 }
