@@ -49,12 +49,12 @@ public class PlaylistController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Playlist> getPlaylistById(@PathVariable(value = "id") int playlistId, Principal principal) {
+    public ResponseEntity<Set<Song>> getPlaylistById(@PathVariable(value = "id") int playlistId, Principal principal) {
         User user = (User) customUserDetailsService.loadUserByUsername(principal.getName());
         if (user != null) {
             Playlist playlist = playlistService.findByIdAndUserId(playlistId, user.getId());
             if (playlist != null) {
-                return ResponseEntity.ok().body(playlist);
+                return ResponseEntity.ok().body(playlist.getSongs());
             } else {
                 return ResponseEntity.notFound().build();
             }

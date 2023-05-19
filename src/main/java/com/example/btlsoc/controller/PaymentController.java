@@ -7,6 +7,7 @@ import com.example.btlsoc.service.OrderService;
 import com.example.btlsoc.service.PaymentService;
 import com.example.btlsoc.service.PlanService;
 import jakarta.servlet.http.HttpServletRequest;
+import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
@@ -134,7 +135,7 @@ public class PaymentController {
     }
 
     @PostMapping("/payment")
-    public RedirectView payment(@RequestBody Map<String, Object> order, Principal principal, HttpServletRequest request) throws UnsupportedEncodingException, NoSuchAlgorithmException, InvalidKeyException {
+    public ResponseEntity<?> payment(@RequestBody Map<String, Object> order, Principal principal, HttpServletRequest request) throws UnsupportedEncodingException, NoSuchAlgorithmException, InvalidKeyException {
         Plan plan = planService.findById((Integer) order.get("plan"));
         String orderDesc = (String) order.get("orderDesc");
         String bankCode = (String) order.get("bankCode");
@@ -205,14 +206,13 @@ public class PaymentController {
         String paymentUrl = VNPAY_PAYMENT_URL + "?" + queryUrl;
         System.out.println(paymentUrl);
 
-        RedirectView redirectView = new RedirectView();
         try {
-            redirectView.setUrl(paymentUrl);
             orderService.save(new Order(orderId, amount, date, orderDesc, StatusOrder.pending,plan, user));
+            return ResponseEntity.status(HttpStatus.OK).body(paymentUrl);
         } catch (Exception e){
             e.printStackTrace();
         }
-        return redirectView;
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Lỗi vui lòng thử lại");
     }
 
     public static String getIpAddress(HttpServletRequest request) {
